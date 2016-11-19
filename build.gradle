@@ -1,17 +1,17 @@
 buildscript {
     ext {
-        springBootVersion = '1.4.1.RELEASE'
+        springBootVersion = '1.4.2.RELEASE'
     }
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath("orgId.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
 
 apply plugin: 'java'
-apply plugin: 'spring-boot'
+apply plugin: 'org.springframework.boot'
 
 jar {
     baseName = 'fint-sse-server'
@@ -27,8 +27,8 @@ repositories {
 
 
 dependencies {
-    compile('orgId.projectlombok:lombok')
+    compileOnly('org.projectlombok:lombok')
 
-    compile('orgId.springframework.boot:spring-boot-devtools')
-    compile('orgId.springframework.boot:spring-boot-starter-web')
+    runtime('org.springframework.boot:spring-boot-devtools')
+    compile('org.springframework.boot:spring-boot-starter-web')
 }
